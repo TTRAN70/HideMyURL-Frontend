@@ -1,0 +1,21 @@
+.vertical {
+    position: relative;
+    top: 30vh;
+}
+
+.form-signin {
+    max-width: 500px;
+}
+.link {
+    position: relative;
+    bottom: 3vh;
+}
+
+.link-underline-primary {
+    cursor: pointer !important;
+    text-decoration: none;
+}
+
+.link-underline-primary:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,20 @@
+.nav-item:hover {
+    background-color: var(--bs-primary);
+    color: white !important;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
+}
+
+.nav-link {
+    color: black !important;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
+}
+
+.nav-link:hover {
+    color: white !important;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
+}
+
+.username {
+    top: 50% !important;
+    right: 5% !important;
+}

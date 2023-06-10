@@ -1,0 +1,48 @@
+.size {
+    min-height: 70vh;
+    margin-top: 5%;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+a {
+    display: inline-block;
+    border-radius: 50%;
+  }
+  
+  a:hover .left, a:hover .top, a:hover .bottom, a:hover .right{
+    border: 0.5em solid #0d6efd;
+  }
+  
+  a:hover .left:after, a:hover .top:after, a:hover .bottom:after, a:hover .right:after {
+    border-top: 0.5em solid #0d6efd;
+    border-right: 0.5em solid #0d6efd;
+  }
+
+  .right {
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    border: 0.5em solid #333;
+    border-radius: 50%;
+    margin-left: 1.5em;
+  }
+  
+  .right:after {
+    content: '';
+      display: inline-block;
+    margin-top: .8em;
+    margin-left: .6em;
+    width: 1.4em;
+    height: 1.4em;
+    border-top: 0.5em solid #333;
+    border-right: 0.5em solid #333;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .arrow {
+    position: absolute;
+    right: 5%;
+    top: 27%;
+  }

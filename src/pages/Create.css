@@ -1,0 +1,8 @@
+.vertical {
+    position: relative;
+    top: 30vh;
+}
+
+.form-signin {
+    max-width: 500px;
+}
