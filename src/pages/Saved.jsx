@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { UseAuthContext } from "../AuthContext";
 import { useEffect, useState } from "react";
 import Navbar from "../navigation/Navbar";
+import { RxTrash } from "react-icons/rx";
 
 const Saved = () => {
   const [linkList, setList] = useState([]);
@@ -49,6 +50,32 @@ const Saved = () => {
     };
     savedUsers();
   }, []);
+
+  const handleDelete = async (e) => {
+    const keyValue = e.currentTarget.dataset.item;
+    const linkID = linkList[keyValue][0].linkID;
+    try {
+      const response = await fetch(`/deleteURL/${userID}/${linkID}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        referrerPolicy: "no-referrer",
+      });
+      const result = await response.json();
+      if (response.ok) {
+        if (result.success) {
+          setList((item) => {
+            return item.splice(keyValue, 1);
+          });
+        } else {
+          console.log(result.error);
+        }
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
   return (
     <div>
       <Navbar />
@@ -64,6 +91,13 @@ const Saved = () => {
                   <span className="right"></span>
                 </a>
               </div>
+              <button
+                data-item={key}
+                onClick={(e) => handleDelete(e)}
+                className="trash-btn"
+              >
+                <RxTrash />
+              </button>
               <div className="h5">https://localhost:5173/{item[0].linkID}</div>
               <div className="text-secondary">{item[0].originalURL}</div>
               <div className="text-secondary">password: {item[0].password}</div>
