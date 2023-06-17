@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
 import { auth } from "./firebase";
 import { useNavigate } from "react-router-dom";
@@ -41,6 +42,11 @@ export const AuthContextProvider = ({ children }) => {
     }
   };
 
+  const signout = () => {
+    const auth = getAuth();
+    return signOut(auth);
+  };
+
   useEffect(() => {
     const subscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -55,7 +61,7 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ signup, signin, username, isUserLoggedIn, getUserID }}
+      value={{ signup, signin, username, isUserLoggedIn, getUserID, signout }}
     >
       {children}
     </AuthContext.Provider>
