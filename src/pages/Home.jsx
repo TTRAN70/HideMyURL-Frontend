@@ -123,7 +123,7 @@ const Home = () => {
               Password
             </span>
             <input
-              type="text"
+              type="password"
               className="form-control"
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"

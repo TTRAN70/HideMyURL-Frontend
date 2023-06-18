@@ -1,4 +1,5 @@
 import "./Saved.css";
+import Reveal from "./Reveal";
 import { useParams } from "react-router-dom";
 import { UseAuthContext } from "../AuthContext";
 import { useEffect, useState } from "react";
@@ -100,7 +101,10 @@ const Saved = () => {
               </button>
               <div className="h5">https://localhost:5173/{item[0].linkID}</div>
               <div className="text-secondary">{item[0].originalURL}</div>
-              <div className="text-secondary">password: {item[0].password}</div>
+              <div className="text-secondary">
+                {"password: "}
+                <Reveal password={item[0].password} />
+              </div>
               <div className="text-secondary">{item[0].createdAt}</div>
             </div>
           );

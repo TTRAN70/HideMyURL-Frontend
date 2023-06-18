@@ -19,6 +19,10 @@
     right: 2% !important;
 }
 
+.dd {
+    position: relative;
+}
+
 .ddbutton {
     border: none !important;
     background-color: var(--bs-light);
@@ -26,7 +30,7 @@
 .ddmenu {
     display: block;
     top: 110%;
-    right: 12%;
+    right: 8%;
     position: absolute !important;
     border: 1px solid grey !important;
     padding-inline-start: 0;
@@ -73,6 +77,6 @@
   }
 
 .up {
-    transform: rotate(225deg);
-    -webkit-transform: rotate(225deg);
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
   }

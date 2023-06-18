@@ -2,16 +2,29 @@ import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { UseAuthContext } from "../AuthContext";
+import { BsGoogle } from "react-icons/bs";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { signin } = UseAuthContext();
+  const { signin, googleSignin, getUserID, getEmail } = UseAuthContext();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await signin(email, password);
+      navigate("/home");
+    } catch (err) {
+      setError(err.code);
+      console.clear();
+    }
+  };
+  const handleGoogle = async () => {
+    try {
+      await googleSignin();
+      const UID = await getUserID();
+      const newEmail = await getEmail();
+      const signupInfo = { uid: UID, email: newEmail };
       navigate("/home");
     } catch (err) {
       setError(err.code);
@@ -43,8 +56,12 @@ const Login = () => {
           />
         </div>
         <div className="input-group d-flex justify-content-end">
-          <button className="btn btn-outline-primary" type="button">
-            Google
+          <button
+            onClick={() => handleGoogle()}
+            className="btn btn-outline-primary"
+            type="button"
+          >
+            <BsGoogle className="google position-relative" />
           </button>
           <button className="btn btn-outline-primary" type="submit">
             Sign In

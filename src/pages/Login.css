@@ -19,3 +19,7 @@
 .link-underline-primary:hover {
     text-decoration: underline;
 }
+
+.google {
+    bottom: 5%;
+}

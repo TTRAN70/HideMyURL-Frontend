@@ -5,6 +5,8 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 import { auth } from "./firebase";
 import { useNavigate } from "react-router-dom";
@@ -20,6 +22,11 @@ export const AuthContextProvider = ({ children }) => {
   };
   const signin = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const googleSignin = () => {
+    const provider = new GoogleAuthProvider();
+    return signInWithPopup(auth, provider);
   };
 
   const isUserLoggedIn = () => {
@@ -42,6 +49,14 @@ export const AuthContextProvider = ({ children }) => {
     }
   };
 
+  const getEmail = () => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if (user !== null) {
+      return user.email;
+    }
+  };
+
   const signout = () => {
     const auth = getAuth();
     return signOut(auth);
@@ -61,7 +76,16 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ signup, signin, username, isUserLoggedIn, getUserID, signout }}
+      value={{
+        signup,
+        signin,
+        username,
+        isUserLoggedIn,
+        getUserID,
+        signout,
+        googleSignin,
+        getEmail,
+      }}
     >
       {children}
     </AuthContext.Provider>
