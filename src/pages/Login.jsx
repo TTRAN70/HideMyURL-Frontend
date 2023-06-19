@@ -25,7 +25,19 @@ const Login = () => {
       const UID = await getUserID();
       const newEmail = await getEmail();
       const signupInfo = { uid: UID, email: newEmail };
-      navigate("/home");
+      const response = await fetch("/google", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify(signupInfo),
+      });
+      const result = await response.json();
+      if (response.ok) {
+        console.log(result.success);
+        navigate("/home");
+      }
     } catch (err) {
       setError(err.code);
       console.clear();
