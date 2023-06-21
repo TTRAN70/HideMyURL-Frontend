@@ -82,7 +82,7 @@ const Create = () => {
             className="link-underline-primary"
             target="_blank"
             rel="noreferrer"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/login")}
           >
             Sign in instead?
           </a>
