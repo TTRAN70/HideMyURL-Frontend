@@ -1,0 +1,87 @@
+.main {
+    width: 100%;
+    height: 100%;
+}
+.Login {
+    font-size: 1.5rem !important;
+    border: none !important;
+    transition: opacity 0.15 ease-in-out !important;
+    font-weight: 900 !important;
+    position: relative;
+    top: 1rem;
+}
+
+.sign {
+    position: relative;
+    top: 1rem;
+    right: 0.5%;
+    border-radius: 0.9rem !important;
+    font-weight: 900 !important;
+}
+
+.Login:hover {
+    opacity: 0.9 !important;
+}
+
+.logging {
+    margin-right: 2%;
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 900 !important;
+}
+
+.title {
+    font-size: 4.5rem;
+    margin-top: 1%;
+    text-align: center;
+    width: 29%;
+    position: relative;
+    left: 37%;
+    font-weight: 700;
+}
+
+.searchbar {
+    width: 45% !important;
+    position: relative;
+    left: 30%;
+    margin-top: 5%;
+    height: 4rem !important;
+}
+
+.searching {
+    border: 2px solid black !important;
+    border-radius: 0.9rem !important;
+    box-shadow: none !important;
+    font-size: 1.7rem !important;
+    padding-inline-end: 10% !important;
+}
+
+.searching:active {
+    box-shadow: none !important;
+}
+
+.searching:focus {
+    z-index: 0 !important;
+}
+
+.enter {
+    position: relative;
+    font-size: 2rem;
+    height: 3.1rem !important;
+}
+
+.submitting {
+    position: relative;
+    right: 5%;
+}
+
+.actualbutton {
+    border-radius: 1% 15% 15% 1% !important;
+}
+
+.actualbutton:hover {
+    background-color: #0d6efd !important;
+    background-color: rgb(63 63 70/1) !important;
+    border-color: rgb(63 63 70/1) !important;
+}
