@@ -4,6 +4,8 @@ import { useState } from "react";
 import moment from "moment";
 import { RxEnter } from "react-icons/rx";
 import { IoIosCheckmarkCircle, IoIosAlert } from "react-icons/io";
+import { FaStop, FaLock, FaInfinity } from "react-icons/fa";
+import { BsFillLightningChargeFill } from "react-icons/bs";
 const Landing = () => {
   const [link, setLink] = useState("");
   const [loading, setLoading] = useState(false);
@@ -123,6 +125,54 @@ const Landing = () => {
           </div>
         </div>
       )}
+      <div className="text-center mt-5 desc">
+        Simply paste your URL, click the blue button
+      </div>
+      <div className="text-center desc">and get a hidden URL for free!</div>
+      <div className="bentoinfo d-flex justify-content-evenly p-3">
+        <div className="item1 position-relative">
+          <FaStop className="box" />
+          <BsFillLightningChargeFill className="fast" />
+          <div className="fs-3 subtitle">Faster than ever.</div>
+          <div className="subdesc">
+            Using the latest technology, getting a newer URL{" "}
+          </div>
+          <div className="subdesc">is now 30% faster.</div>
+        </div>
+        <div className="item2 position-relative">
+          <FaStop className="box" />
+          <FaLock className="lock" />
+          <div className="fs-3 subtitle">Enable Passwords.</div>
+          <div className="subdesc">
+            Simply login or signup to add a password to your URL{" "}
+          </div>
+          <div className="subdesc">
+            to prevent malicious people from entering your website.
+          </div>
+        </div>
+        <div className="item3 position-relative">
+          <FaStop className="box" />
+          <FaInfinity className="infinity" />
+          <div className="fs-3 subtitle">Completely Free.</div>
+          <div className="subdesc">
+            Free and Unlimited. Paste as many links as you{" "}
+          </div>
+          <div className="subdesc">need, or want.</div>
+        </div>
+      </div>
+      <div className="banner">
+        <div className="btitle">Need to Save Your URL?</div>
+        <div className="oned text-center">
+          1.
+          <button type="button" className="bsign btn btn-light btn-lg">
+            Sign Up
+          </button>
+        </div>
+        <div className="oned text-center">2. Create a URL</div>
+        <div className="oned text-center">
+          3. View your URLS at "Saved URLS"
+        </div>
+      </div>
     </div>
   );
 };
