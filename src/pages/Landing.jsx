@@ -4,7 +4,7 @@ import { useState } from "react";
 import moment from "moment";
 import { RxEnter } from "react-icons/rx";
 import { IoIosCheckmarkCircle, IoIosAlert } from "react-icons/io";
-import { FaStop, FaLock, FaInfinity } from "react-icons/fa";
+import { FaStop, FaLock, FaInfinity, FaPlus } from "react-icons/fa";
 import { BsFillLightningChargeFill } from "react-icons/bs";
 const Landing = () => {
   const [link, setLink] = useState("");
@@ -171,6 +171,64 @@ const Landing = () => {
         <div className="oned text-center">2. Create a URL</div>
         <div className="oned text-center">
           3. View your URLS at "Saved URLS"
+        </div>
+      </div>
+      <div className="faq">
+        <div className="ftitle">FAQ</div>
+        <div className="faqsection d-flex flex-wrap">
+          <div className="f1">
+            <button
+              id="faq-btn-0"
+              aria-controls="faq-0"
+              aria-expanded="true"
+              className="fbutton"
+              type="button"
+            >
+              Is this safe?{" "}
+              <span className="plus">
+                <FaPlus />
+              </span>
+            </button>
+            <div
+              aria-hidden="true"
+              id="faq-0"
+              aria-labelledby="faq-btn-0"
+              className="fdesc"
+            >
+              URL shorteners use redirection techniques to forward users from
+              the shortened URL to the original destination. This process allows
+              them to track and analyze the traffic, helping to identify and
+              mitigate potential security risks.
+            </div>
+            <hr className="line" />
+          </div>
+          <div className="f2">
+            <button className="fbutton" type="button">
+              Will my URL stay forever?{" "}
+              <span className="plus plus2">
+                <FaPlus />
+              </span>
+            </button>
+            <hr className="line" />
+          </div>
+          <div className="f3">
+            <button className="fbutton" type="button">
+              What is a URL Hider?{" "}
+              <span className="plus plus3">
+                <FaPlus />
+              </span>
+            </button>
+            <hr className="line" />
+          </div>
+          <div className="f4">
+            <button className="fbutton" type="button">
+              What are the benefits?{" "}
+              <span className="plus plus4">
+                <FaPlus />
+              </span>
+            </button>
+            <hr className="line" />
+          </div>
         </div>
       </div>
     </div>
