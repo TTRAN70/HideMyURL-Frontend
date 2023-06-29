@@ -1,10 +1,10 @@
 import "./Landing.css";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import moment from "moment";
 import { RxEnter } from "react-icons/rx";
 import { IoIosCheckmarkCircle, IoIosAlert } from "react-icons/io";
-import { FaStop, FaLock, FaInfinity, FaPlus } from "react-icons/fa";
+import { FaStop, FaLock, FaInfinity, FaPlus, FaMinus } from "react-icons/fa";
 import { BsFillLightningChargeFill } from "react-icons/bs";
 const Landing = () => {
   const [link, setLink] = useState("");
@@ -13,6 +13,38 @@ const Landing = () => {
   const [success, setSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [minus1, setMinus1] = useState(false);
+  const [minus2, setMinus2] = useState(false);
+  const [minus3, setMinus3] = useState(false);
+  const [minus4, setMinus4] = useState(false);
+
+  useEffect(() => {
+    [...document.querySelectorAll(".fbutton")].forEach((item) => {
+      item.addEventListener("click", (e) => {
+        const parent = e.currentTarget.parentNode.children;
+        const second = parent[1];
+        if (second.classList.contains("hide")) {
+          second.classList.remove("hide");
+        } else {
+          second.classList.add("hide");
+        }
+      });
+    });
+    return () => {
+      [...document.querySelectorAll(".fbutton")].forEach((item) => {
+        item.addEventListener("click", (e) => {
+          const parent = e.currentTarget.parentNode.children;
+          const second = parent[1];
+          if (second.classList.contains("hide")) {
+            second.classList.remove("hide");
+          } else {
+            second.classList.add("hide");
+          }
+        });
+      });
+    };
+  }, []);
+
   const createURL = async (e) => {
     e.preventDefault();
     const currentDate = moment().format("MMMM Do YYYY, h:mm:ss a");
@@ -183,17 +215,16 @@ const Landing = () => {
               aria-expanded="true"
               className="fbutton"
               type="button"
+              onClick={() => setMinus1(!minus1)}
             >
               Is this safe?{" "}
-              <span className="plus">
-                <FaPlus />
-              </span>
+              <span className="plus">{minus1 ? <FaMinus /> : <FaPlus />}</span>
             </button>
             <div
               aria-hidden="true"
               id="faq-0"
               aria-labelledby="faq-btn-0"
-              className="fdesc"
+              className="fdesc hide"
             >
               URL shorteners use redirection techniques to forward users from
               the shortened URL to the original destination. This process allows
@@ -203,30 +234,77 @@ const Landing = () => {
             <hr className="line" />
           </div>
           <div className="f2">
-            <button className="fbutton" type="button">
+            <button
+              onClick={() => setMinus2(!minus2)}
+              className="fbutton"
+              type="button"
+            >
               Will my URL stay forever?{" "}
               <span className="plus plus2">
-                <FaPlus />
+                {minus2 ? <FaMinus /> : <FaPlus />}
               </span>
             </button>
+            <div
+              aria-hidden="true"
+              id="faq-0"
+              aria-labelledby="faq-btn-0"
+              className="fdesc hide"
+            >
+              Yes! Your URL will stay in our database forever and ever, allowing
+              you to access your short URLS anytime, anywhere
+            </div>
             <hr className="line" />
           </div>
           <div className="f3">
-            <button className="fbutton" type="button">
+            <button
+              onClick={() => setMinus3(!minus3)}
+              className="fbutton"
+              type="button"
+            >
               What is a URL Hider?{" "}
               <span className="plus plus3">
-                <FaPlus />
+                {minus3 ? <FaMinus /> : <FaPlus />}
               </span>
             </button>
+            <div
+              aria-hidden="true"
+              id="faq-0"
+              aria-labelledby="faq-btn-0"
+              className="fdesc hide"
+            >
+              A URL shortener is a tool or service that takes a long and complex
+              URL (Uniform Resource Locator) and creates a shorter, condensed
+              version of it. This shortened URL redirects users to the original
+              long URL when clicked. URL shorteners are commonly used to make
+              long URLs more manageable, shareable, and easier to remember or
+              type. They are often used in situations where character
+              limitations or aesthetic considerations are important, such as
+              social media posts, email communications, or messaging platforms.
+            </div>
             <hr className="line" />
           </div>
           <div className="f4">
-            <button className="fbutton" type="button">
+            <button
+              onClick={() => setMinus4(!minus4)}
+              className="fbutton"
+              type="button"
+            >
               What are the benefits?{" "}
               <span className="plus plus4">
-                <FaPlus />
+                {minus4 ? <FaMinus /> : <FaPlus />}
               </span>
             </button>
+            <div
+              aria-hidden="true"
+              id="faq-0"
+              aria-labelledby="faq-btn-0"
+              className="fdesc hide"
+            >
+              Overall, short URLs simplify link sharing, enhance user
+              experience, provide tracking capabilities, and offer branding
+              opportunities while maintaining a clean and professional
+              appearance.
+            </div>
             <hr className="line" />
           </div>
         </div>
