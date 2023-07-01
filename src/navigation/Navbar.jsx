@@ -19,7 +19,7 @@ const Navbar = () => {
     }
   };
   return (
-    <div className="text-bg-light shadow-sm position-relative">
+    <div className="text-bg-light shadow-sm position-relative navvy">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">

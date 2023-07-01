@@ -1,6 +1,7 @@
 .vertical {
     position: relative;
     top: 30vh;
+    font-family: 'Inter', sans-serif !important;
 }
 
 .form-signin {
@@ -22,4 +23,8 @@
 
 .google {
     bottom: 5%;
+}
+
+.ltitle {
+    font-weight: 700 !important;
 }

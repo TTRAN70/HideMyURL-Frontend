@@ -80,3 +80,8 @@
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
   }
+
+.navvy {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700;
+}

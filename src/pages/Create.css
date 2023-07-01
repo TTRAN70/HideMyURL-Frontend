@@ -1,8 +1,13 @@
 .vertical {
     position: relative;
     top: 30vh;
+    font-family: 'Inter', sans-serif !important;
 }
 
 .form-signin {
     max-width: 500px;
+}
+
+.ltitle {
+    font-weight: 700 !important;
 }

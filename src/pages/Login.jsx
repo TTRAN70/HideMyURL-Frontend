@@ -46,7 +46,7 @@ const Login = () => {
   return (
     <div className="container vertical">
       <form onSubmit={(e) => handleSubmit(e)} className="form-signin m-auto">
-        <h1>Login</h1>
+        <h1 className="ltitle">Login</h1>
         <div className="mb-3">
           <input
             type="email"

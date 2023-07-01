@@ -14,6 +14,51 @@
     top: -2px;
 }
 
+.hsearchbar {
+  width: 100% !important;
+  position: relative;
+  left: 0;
+  margin-top: 5%;
+  height: 4rem !important;
+}
+
+.hsearching {
+  border: 2px solid black !important;
+  border-radius: 0.9rem !important;
+  box-shadow: none !important;
+  font-size: 1.7rem !important;
+  padding-inline-end: 10% !important;
+}
+
+.hsearching:active {
+  box-shadow: none !important;
+}
+
+.hsearching:focus {
+  z-index: 0 !important;
+}
+
+.henter {
+  position: relative;
+  font-size: 2rem;
+  height: 3.1rem !important;
+}
+
+.hsubmitting {
+  position: relative;
+  right: 5%;
+}
+
+.hactualbutton {
+  border-radius: 1% 15% 15% 1% !important;
+}
+
+.hactualbutton:hover {
+  background-color: #0d6efd !important;
+  background-color: rgb(63 63 70/1) !important;
+  border-color: rgb(63 63 70/1) !important;
+}
+
 .loader {
     z-index: 1;
     width: 23px;

@@ -35,7 +35,7 @@ const Create = () => {
   return (
     <div className="container vertical">
       <form onSubmit={(e) => createAccount(e)} className="form-signin m-auto">
-        <h1>Create an Account</h1>
+        <h1 className="ltitle">Create an Account</h1>
         <div className="mb-3">
           <input
             type="email"

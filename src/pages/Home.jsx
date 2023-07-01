@@ -1,6 +1,7 @@
 import "./Home.css";
 import { useEffect, useState } from "react";
 import { UseAuthContext } from "../AuthContext";
+import { RxEnter } from "react-icons/rx";
 import { IoIosCheckmarkCircle, IoIosAlert } from "react-icons/io";
 import moment from "moment";
 import Navbar from "../navigation/Navbar";
@@ -80,29 +81,32 @@ const Home = () => {
     <div>
       <Navbar />
       <div className="container w-50 vertical">
-        <h1>Link Hider</h1>
+        <h1>Welcome, feel free to explore.</h1>
         <form onSubmit={(e) => createURL(e)} className="form">
-          <div className="input-group mb-3">
+          <div className="hsearchbar input-group mb-3">
             <input
               required
               value={link}
               type="url"
-              className="form-control"
-              placeholder="Enter URL"
+              className="hsearching form-control"
               aria-label="Enter URL"
               aria-describedby="basic-addon2"
               onChange={(e) => setLink(e.target.value)}
             />
-            <div className="input-group-append">
+            <div className="hsubmitting input-group-append">
               <button
                 className={
                   loading
-                    ? "btn btn-outline-primary loading"
-                    : "btn btn-outline-primary"
+                    ? "hactualbutton btn btn-primary loading"
+                    : "hactualbutton btn btn-primary"
                 }
                 type="submit"
               >
-                {loading ? <div className="loader"></div> : "Submit URL"}
+                {loading ? (
+                  <div className="loader"></div>
+                ) : (
+                  <RxEnter className="henter" />
+                )}
               </button>
             </div>
           </div>

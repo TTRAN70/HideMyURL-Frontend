@@ -17,17 +17,20 @@ const Landing = () => {
   const [minus2, setMinus2] = useState(false);
   const [minus3, setMinus3] = useState(false);
   const [minus4, setMinus4] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     [...document.querySelectorAll(".fbutton")].forEach((item) => {
       item.addEventListener("click", (e) => {
         const parent = e.currentTarget.parentNode.children;
         const second = parent[1];
-        if (second.classList.contains("hide")) {
-          second.classList.remove("hide");
+        if (second.style.maxHeight) {
+          second.style.maxHeight = null;
         } else {
-          second.classList.add("hide");
+          second.style.maxHeight = second.scrollHeight + "px";
         }
+        const element = document.getElementById("faq-0");
+        element.scrollTop = element.scrollHeight;
       });
     });
     return () => {
@@ -35,11 +38,13 @@ const Landing = () => {
         item.addEventListener("click", (e) => {
           const parent = e.currentTarget.parentNode.children;
           const second = parent[1];
-          if (second.classList.contains("hide")) {
-            second.classList.remove("hide");
+          if (second.style.maxHeight) {
+            second.style.maxHeight = null;
           } else {
-            second.classList.add("hide");
+            second.style.maxHeight = second.scrollHeight + "px";
           }
+          const element = document.getElementById("faq-0");
+          element.scrollTop = element.scrollHeight;
         });
       });
     };
@@ -90,10 +95,18 @@ const Landing = () => {
   return (
     <div className="main">
       <div className="logging">
-        <button type="button" className="sign btn btn-dark btn-lg">
+        <button
+          onClick={() => navigate("/createaccount")}
+          type="button"
+          className="sign btn btn-dark btn-lg"
+        >
           Sign Up
         </button>
-        <button type="button" className="Login btn">
+        <button
+          onClick={() => navigate("/login")}
+          type="button"
+          className="Login btn"
+        >
           Login
         </button>
       </div>
@@ -224,7 +237,7 @@ const Landing = () => {
               aria-hidden="true"
               id="faq-0"
               aria-labelledby="faq-btn-0"
-              className="fdesc hide"
+              className="fdesc"
             >
               URL shorteners use redirection techniques to forward users from
               the shortened URL to the original destination. This process allows
@@ -248,7 +261,7 @@ const Landing = () => {
               aria-hidden="true"
               id="faq-0"
               aria-labelledby="faq-btn-0"
-              className="fdesc hide"
+              className="fdesc"
             >
               Yes! Your URL will stay in our database forever and ever, allowing
               you to access your short URLS anytime, anywhere
@@ -270,7 +283,7 @@ const Landing = () => {
               aria-hidden="true"
               id="faq-0"
               aria-labelledby="faq-btn-0"
-              className="fdesc hide"
+              className="fdesc"
             >
               A URL shortener is a tool or service that takes a long and complex
               URL (Uniform Resource Locator) and creates a shorter, condensed
@@ -298,7 +311,7 @@ const Landing = () => {
               aria-hidden="true"
               id="faq-0"
               aria-labelledby="faq-btn-0"
-              className="fdesc hide"
+              className="fdesc"
             >
               Overall, short URLs simplify link sharing, enhance user
               experience, provide tracking capabilities, and offer branding
