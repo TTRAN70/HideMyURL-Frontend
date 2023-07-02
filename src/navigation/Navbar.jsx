@@ -23,7 +23,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item rounded-3">
+            <li className="nav-item rounded-3 cre">
               <Link className="nav-link" to="/home">
                 Create
               </Link>

@@ -86,7 +86,6 @@ const Landing = () => {
         }
       }
     } catch (err) {
-      console.error(err);
       setErrorMessage(err.message);
       setError(true);
       setLoading(false);
@@ -153,7 +152,7 @@ const Landing = () => {
       )}
       {success && (
         <div
-          className="p-2 alert alert-success d-flex align-items-center"
+          className="p-2 alert alert-success d-flex align-items-center justify-content-center"
           role="alert"
         >
           <div className="fontsizing">
@@ -209,7 +208,11 @@ const Landing = () => {
         <div className="btitle">Need to Save Your URL?</div>
         <div className="oned text-center">
           1.
-          <button type="button" className="bsign btn btn-light btn-lg">
+          <button
+            onClick={() => navigate("/createaccount")}
+            type="button"
+            className="bsign btn btn-light btn-lg"
+          >
             Sign Up
           </button>
         </div>

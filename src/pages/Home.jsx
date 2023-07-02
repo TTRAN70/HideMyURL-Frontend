@@ -56,7 +56,6 @@ const Home = () => {
         }
       }
     } catch (err) {
-      console.error(err);
       setErrorMessage(err.message);
       setError(true);
       setLoading(false);
@@ -80,7 +79,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div className="container w-50 vertical">
+      <div className="container vertical hmain">
         <h1>Welcome, feel free to explore.</h1>
         <form onSubmit={(e) => createURL(e)} className="form">
           <div className="hsearchbar input-group mb-3">

@@ -23,9 +23,7 @@ const Create = () => {
         referrerPolicy: "no-referrer",
         body: JSON.stringify(signupInfo),
       });
-      const result = await response.json();
       if (response.ok) {
-        console.log(result.success);
         navigate("/home");
       }
     } catch (err) {

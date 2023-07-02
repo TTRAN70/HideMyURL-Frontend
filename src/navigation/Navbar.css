@@ -85,3 +85,9 @@
     font-family: 'Inter', sans-serif !important;
     font-weight: 700;
 }
+
+@media (max-width: 500px) {
+    .cre {
+        width: 60%;
+      }
+}
