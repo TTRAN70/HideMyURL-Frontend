@@ -7,37 +7,37 @@ export default defineConfig({
   server: {
     proxy: {
       "/make": {
-        target: "http://localhost:3000/api/urlshort/makeuser",
+        target: "https://hmu-backend.vercel.app/api/urlshort/makeuser",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/make/, ""),
       },
       "/newURL": {
-        target: "http://localhost:3000/api/urlshort",
+        target: "https://hmu-backend.vercel.app/api/urlshort",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/newURL/, ""),
       },
       "/redirect": {
-        target: "http://localhost:3000/api/urlshort",
+        target: "https://hmu-backend.vercel.app/api/urlshort",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/redirect/, ""),
       },
       "/getAllLinks": {
-        target: "http://localhost:3000/api/urlshort/geturls",
+        target: "https://hmu-backend.vercel.app/api/urlshort/geturls",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/getAllLinks/, ""),
       },
       "/deleteURL": {
-        target: "http://localhost:3000/api/urlshort",
+        target: "https://hmu-backend.vercel.app/api/urlshort",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/deleteURL/, ""),
       },
       "/google": {
-        target: "http://localhost:3000/api/urlshort/googleuser",
+        target: "https://hmu-backend.vercel.app/api/urlshort/googleuser",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/google/, ""),
