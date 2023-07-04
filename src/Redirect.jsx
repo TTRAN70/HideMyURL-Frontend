@@ -20,7 +20,9 @@ const Redirect = () => {
   useEffect(() => {
     const redirectUser = async () => {
       try {
-        const response = await fetch(`/redirect/${id}`);
+        const response = await fetch(
+          `https://hmu-backend.vercel.app/api/urlshort/${id}`
+        );
         const result = await response.json();
         if (response.ok) {
           if (result.link && result.pass == "") {

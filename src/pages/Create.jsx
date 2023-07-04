@@ -15,14 +15,17 @@ const Create = () => {
       await signup(email, password);
       const UID = await getUserID();
       const signupInfo = { user: { userId: UID, email: email } };
-      const response = await fetch("/make", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        referrerPolicy: "no-referrer",
-        body: JSON.stringify(signupInfo),
-      });
+      const response = await fetch(
+        "https://hmu-backend.vercel.app/api/urlshort/makeuser",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          referrerPolicy: "no-referrer",
+          body: JSON.stringify(signupInfo),
+        }
+      );
       if (response.ok) {
         navigate("/home");
       }

@@ -58,13 +58,16 @@ const Saved = () => {
     const keyValue = e.currentTarget.dataset.item;
     const linkID = linkList[keyValue][0].linkID;
     try {
-      const response = await fetch(`/deleteURL/${userID}/${linkID}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        referrerPolicy: "no-referrer",
-      });
+      const response = await fetch(
+        `https://hmu-backend.vercel.app/api/urlshort/${userID}/${linkID}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          referrerPolicy: "no-referrer",
+        }
+      );
       const result = await response.json();
       if (response.ok) {
         if (result.success) {
