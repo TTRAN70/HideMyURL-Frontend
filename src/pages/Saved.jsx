@@ -88,7 +88,11 @@ const Saved = () => {
               key={key}
             >
               <div className="arrow">
-                <a target="_blank" rel="noreferrer" href={`/${item[0].linkID}`}>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href={`https://hidemyurl.vercel.app/${item[0].linkID}`}
+                >
                   <span className="right"></span>
                 </a>
               </div>
@@ -99,7 +103,9 @@ const Saved = () => {
               >
                 <RxTrash />
               </button>
-              <div className="h5">https://localhost:5173/{item[0].linkID}</div>
+              <div className="h5">
+                https://hidemyurl.vercel.app/{item[0].linkID}
+              </div>
               <div className="text-secondary">{item[0].originalURL}</div>
               <div className="text-secondary">
                 {"password: "}

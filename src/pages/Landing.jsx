@@ -162,9 +162,9 @@ const Landing = () => {
               className="link-underline-primary"
               target="_blank"
               rel="noreferrer"
-              href={`/${successMessage}`}
+              href={`https://hidemyurl.vercel.app/${successMessage}`}
             >
-              https://localhost:5173/{successMessage}
+              https://hidemyurl.vercel.app/{successMessage}
             </a>
           </div>
         </div>
