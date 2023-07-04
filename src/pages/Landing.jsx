@@ -63,14 +63,17 @@ const Landing = () => {
         url: link,
         date: currentDate,
       };
-      const response = await fetch("/newURL", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        referrerPolicy: "no-referrer",
-        body: JSON.stringify(urlInfo),
-      });
+      const response = await fetch(
+        "https://hmu-backend.vercel.app/api/urlshort",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          referrerPolicy: "no-referrer",
+          body: JSON.stringify(urlInfo),
+        }
+      );
       const result = await response.json();
       if (response.ok) {
         if (result.success) {

@@ -18,7 +18,9 @@ const Saved = () => {
   useEffect(() => {
     const savedUsers = async () => {
       try {
-        const response = await fetch(`/getAllLinks/${userID}`);
+        const response = await fetch(
+          `https://hmu-backend.vercel.app/api/urlshort/geturls/${userID}`
+        );
         const result = await response.json();
         if (response.ok) {
           if (result.savedLinks) {
