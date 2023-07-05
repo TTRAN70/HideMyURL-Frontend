@@ -34,7 +34,7 @@ DO NOT actually put sensitive links into the database, the database is literally
     <img width="180" src="https://vitejs.dev/logo.svg" alt="Vite logo">
  </a>
  <a title="Facebook, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:React-icon.svg"><img width="180" alt="React-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"></a>
- <a href="https://firebase.google.com target="_blank"><img width="180" src="https://firebase.google.com/static/downloads/brand-guidelines/SVG/logo-built_white.svg" alt="Firebase logo"></a>
+ <a href="https://firebase.google.com target="_blank"><img width="350" src="https://firebase.google.com/static/downloads/brand-guidelines/SVG/logo-built_white.svg" alt="Firebase logo"></a>
  
  ## Getting Started
 
