@@ -21,7 +21,7 @@
 
 ## About The Project
 
-<a href=[https://weather-app-pi-lake.vercel.app/](https://hidemyurl.vercel.app/)>HideMyURL Link</a>
+<a href="https://hidemyurl.vercel.app/">HideMyURL Link</a>
 
 This Project Turns your original URL into a new, encoded URL like many URL shorteners out there, such as bit.ly
 
@@ -35,7 +35,7 @@ DO NOT actually put sensitive links into the database, the database is literally
 <a href="https://vitejs.dev" target="_blank" rel="noopener noreferrer">
     <img width="180" src="https://vitejs.dev/logo.svg" alt="Vite logo">
  </a>
- <a target="_blank" title="Facebook, Public domain, via Wikimedia Commons" href="https://react.dev/"><img width="180" alt="React-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"></a>
+ <a target="_blank" title="React ICON" href="https://react.dev/"><img width="180" alt="React-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"></a>
  <a href="https://firebase.google.com/" target="_blank"><img width="350" src="https://firebase.google.com/static/downloads/brand-guidelines/SVG/logo-built_white.svg" alt="Firebase logo"></a>
  
  ## Getting Started
