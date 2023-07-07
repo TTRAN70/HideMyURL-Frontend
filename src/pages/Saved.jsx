@@ -72,7 +72,7 @@ const Saved = () => {
       if (response.ok) {
         if (result.success) {
           setList((item) => {
-            return item.splice(keyValue, 1);
+            return item.filter((value, index) => index != keyValue);
           });
         } else {
           console.log(result.error);
