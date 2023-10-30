@@ -95,7 +95,9 @@
     position: relative;
     font-size: 2rem;
     height: 3.1rem !important;
+    padding-top: 15%;
 }
+
 
 .submitting {
     position: relative;
@@ -117,13 +119,18 @@
 }
 
 .bentoinfo {
-    margin-top: 10rem;
     width: 70%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 20px;
     background-color: #cdd0fe;
     color: #010432;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(90deg, #afb4fe, #afb4fe);
+}
+
+.bfix {
+    margin-top: 0.5rem !important;
+    padding-top: 10rem;
+    background-color: #cdd0fe;
 }
 
 .box {
@@ -265,18 +272,29 @@ svg {
 
 @media (max-width: 500px) {
     .title {
+        text-align: center !important;
         font-size: 3rem;
-        padding-top: 10%;
-        width: 70%;
-        left: 13%;
+        padding-top: 20%;
+        width: 100%;
+        left: 2%;
+    }
+    .Login {
+        margin-right: 5%;
     }
     .searchbar {
         width: 100% !important;
-        left: 4%;
+        left: 3%;
+    }
+    .searching, searching::placeholder {
+        font-size: 1.2rem !important;
     }
     .bentoinfo {
         margin-left: 1rem !important;
         margin-right: 0 !important;
+        flex-direction: column;
+    }
+    .item1, .item2, .item3 {
+        padding-bottom: 13% !important;
     }
     .btitle {
         font-size: 3rem;
@@ -286,12 +304,9 @@ svg {
         margin-top: 4%;
     }
     .faqsection {
-        margin-top: 4rem;
+        padding-top: 4rem;
         flex-flow: column wrap;
-        margin-left: 10%;
-    }
-    .ftitle {
-        margin-left: 10%;
+        padding-left: 10%;
     }
     .f1, .f2, .f3, .f4 {
         width: 90%;
@@ -314,8 +329,9 @@ svg {
     .plus4 {
         margin-left: 21%;
     }
-    .enter {
-        height: 3.2rem !important;
+    .bfix {
+      margin-top: 0 !important;
+      padding-top: 5rem !important;
     }
     .fontsizing {
         text-align: center;

@@ -2,10 +2,9 @@ import "./Landing.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import moment from "moment";
-import { RxEnter } from "react-icons/rx";
 import { IoIosCheckmarkCircle, IoIosAlert } from "react-icons/io";
 import { FaLock, FaInfinity, FaPlus, FaMinus } from "react-icons/fa";
-import { BsFillLightningChargeFill } from "react-icons/bs";
+import { BsFillLightningChargeFill, BsArrowReturnLeft } from "react-icons/bs";
 const Landing = () => {
   const [link, setLink] = useState("");
   const [loading, setLoading] = useState(false);
@@ -140,7 +139,7 @@ const Landing = () => {
               {loading ? (
                 <div className="loader"></div>
               ) : (
-                <RxEnter className="enter" />
+                <BsArrowReturnLeft className="enter" />
               )}
             </button>
           </div>
@@ -177,7 +176,7 @@ const Landing = () => {
         </div>
       )}
       <div className="text-center mt-5 desc">Want more features? Sign up!</div>
-      <div className="d-flex mt-2 justify-content-center">
+      <div className="bfix d-flex justify-content-center">
         <div className="bentoinfo d-flex justify-content-evenly p-4">
           <div className="item1 position-relative">
             <BsFillLightningChargeFill className="fast p-2" />
