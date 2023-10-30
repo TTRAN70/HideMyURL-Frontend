@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import moment from "moment";
 import { RxEnter } from "react-icons/rx";
 import { IoIosCheckmarkCircle, IoIosAlert } from "react-icons/io";
-import { FaStop, FaLock, FaInfinity, FaPlus, FaMinus } from "react-icons/fa";
+import { FaLock, FaInfinity, FaPlus, FaMinus } from "react-icons/fa";
 import { BsFillLightningChargeFill } from "react-icons/bs";
 const Landing = () => {
   const [link, setLink] = useState("");
@@ -97,10 +97,13 @@ const Landing = () => {
   return (
     <div className="main">
       <div className="logging">
+        <div onClick={() => navigate("/")} className="logo">
+          <span className="logName">URL</span>SPY
+        </div>
         <button
           onClick={() => navigate("/createaccount")}
           type="button"
-          className="sign btn btn-dark btn-lg"
+          className="sign btn"
         >
           Sign Up
         </button>
@@ -112,7 +115,9 @@ const Landing = () => {
           Login
         </button>
       </div>
-      <h1 className="title">Hide Your URL. For Free.</h1>
+      <h1 className="title">
+        Hide Your <span className="colorEffect">URL</span>
+      </h1>
       <form onSubmit={(e) => createURL(e)} className="form">
         <div className="searchbar input-group mb-3">
           <input
@@ -123,13 +128,12 @@ const Landing = () => {
             aria-label="Enter URL"
             aria-describedby="basic-addon2"
             onChange={(e) => setLink(e.target.value)}
+            placeholder="Paste or enter a URL here..."
           />
           <div className="submitting input-group-append">
             <button
               className={
-                loading
-                  ? "actualbutton btn btn-primary loading"
-                  : "actualbutton btn btn-primary"
+                loading ? "actualbutton btn loading" : "actualbutton btn"
               }
               type="submit"
             >
@@ -172,61 +176,40 @@ const Landing = () => {
           </div>
         </div>
       )}
-      <div className="text-center mt-5 desc">
-        Simply paste your URL, click the blue button
-      </div>
-      <div className="text-center desc">and get a hidden URL for free!</div>
-      <div className="bentoinfo d-flex justify-content-evenly p-3">
-        <div className="item1 position-relative">
-          <FaStop className="box" />
-          <BsFillLightningChargeFill className="fast" />
-          <div className="fs-3 subtitle">Faster than ever.</div>
-          <div className="subdesc">
-            Using the latest technology, getting a newer URL{" "}
+      <div className="text-center mt-5 desc">Want more features? Sign up!</div>
+      <div className="d-flex mt-2 justify-content-center">
+        <div className="bentoinfo d-flex justify-content-evenly p-4">
+          <div className="item1 position-relative">
+            <BsFillLightningChargeFill className="fast p-2" />
+            <div className="fs-3 subtitle">Faster than ever.</div>
+            <div className="subdesc">
+              Using the latest technology, getting a newer URL{" "}
+            </div>
+            <div className="subdesc">is now 30% faster.</div>
           </div>
-          <div className="subdesc">is now 30% faster.</div>
-        </div>
-        <div className="item2 position-relative">
-          <FaStop className="box" />
-          <FaLock className="lock" />
-          <div className="fs-3 subtitle">Enable Passwords.</div>
-          <div className="subdesc">
-            Simply login or signup to add a password to your URL{" "}
+          <div className="item2 position-relative">
+            <FaLock className="lock p-2" />
+            <div className="fs-3 subtitle">Enable Passwords.</div>
+            <div className="subdesc">
+              Simply login or signup to add a password to your URL{" "}
+            </div>
+            <div className="subdesc">
+              to prevent malicious people from entering your website.
+            </div>
           </div>
-          <div className="subdesc">
-            to prevent malicious people from entering your website.
+          <div className="item3 position-relative">
+            <FaInfinity className="infinity p-2" />
+            <div className="fs-3 subtitle">Completely Free.</div>
+            <div className="subdesc">
+              Free and Unlimited. Paste as many links as you{" "}
+            </div>
+            <div className="subdesc">need, or want.</div>
           </div>
-        </div>
-        <div className="item3 position-relative">
-          <FaStop className="box" />
-          <FaInfinity className="infinity" />
-          <div className="fs-3 subtitle">Completely Free.</div>
-          <div className="subdesc">
-            Free and Unlimited. Paste as many links as you{" "}
-          </div>
-          <div className="subdesc">need, or want.</div>
-        </div>
-      </div>
-      <div className="banner">
-        <div className="btitle">Need to Save Your URL?</div>
-        <div className="oned text-center">
-          1.
-          <button
-            onClick={() => navigate("/createaccount")}
-            type="button"
-            className="bsign btn btn-light btn-lg"
-          >
-            Sign Up
-          </button>
-        </div>
-        <div className="oned text-center">2. Create a URL</div>
-        <div className="oned text-center">
-          3. View your URLS at "Saved URLS"
         </div>
       </div>
       <div className="faq">
         <div className="ftitle">FAQ</div>
-        <div className="faqsection d-flex flex-wrap">
+        <div className="faqsection d-flex flex-wrap justify-content-center">
           <div className="f1">
             <button
               id="faq-btn-0"
@@ -245,12 +228,13 @@ const Landing = () => {
               aria-labelledby="faq-btn-0"
               className="fdesc"
             >
-              URL shorteners use redirection techniques to forward users from
-              the shortened URL to the original destination. This process allows
-              them to track and analyze the traffic, helping to identify and
-              mitigate potential security risks.
+              <p className="wow">
+                URL shorteners use redirection techniques to forward users from
+                the shortened URL to the original destination. This process
+                allows them to track and analyze the traffic, helping to
+                identify and mitigate potential security risks.
+              </p>
             </div>
-            <hr className="line" />
           </div>
           <div className="f2">
             <button
@@ -269,10 +253,11 @@ const Landing = () => {
               aria-labelledby="faq-btn-0"
               className="fdesc"
             >
-              Yes! Your URL will stay in our database forever and ever, allowing
-              you to access your short URLS anytime, anywhere
+              <p className="wow">
+                Yes! Your URL will stay in our database forever and ever,
+                allowing you to access your short URLS anytime, anywhere
+              </p>
             </div>
-            <hr className="line" />
           </div>
           <div className="f3">
             <button
@@ -291,16 +276,18 @@ const Landing = () => {
               aria-labelledby="faq-btn-0"
               className="fdesc"
             >
-              A URL shortener is a tool or service that takes a long and complex
-              URL (Uniform Resource Locator) and creates a shorter, condensed
-              version of it. This shortened URL redirects users to the original
-              long URL when clicked. URL shorteners are commonly used to make
-              long URLs more manageable, shareable, and easier to remember or
-              type. They are often used in situations where character
-              limitations or aesthetic considerations are important, such as
-              social media posts, email communications, or messaging platforms.
+              <p className="wow">
+                A URL shortener is a tool or service that takes a long and
+                complex URL (Uniform Resource Locator) and creates a shorter,
+                condensed version of it. This shortened URL redirects users to
+                the original long URL when clicked. URL shorteners are commonly
+                used to make long URLs more manageable, shareable, and easier to
+                remember or type. They are often used in situations where
+                character limitations or aesthetic considerations are important,
+                such as social media posts, email communications, or messaging
+                platforms.
+              </p>
             </div>
-            <hr className="line" />
           </div>
           <div className="f4">
             <button
@@ -319,12 +306,13 @@ const Landing = () => {
               aria-labelledby="faq-btn-0"
               className="fdesc"
             >
-              Overall, short URLs simplify link sharing, enhance user
-              experience, provide tracking capabilities, and offer branding
-              opportunities while maintaining a clean and professional
-              appearance.
+              <p className="wow">
+                Overall, short URLs simplify link sharing, enhance user
+                experience, provide tracking capabilities, and offer branding
+                opportunities while maintaining a clean and professional
+                appearance.
+              </p>
             </div>
-            <hr className="line" />
           </div>
         </div>
       </div>

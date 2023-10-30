@@ -1,23 +1,18 @@
 .main {
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(circle at 0 0,#67d1f1 0,rgba(95,213,182,0) 20%),linear-gradient(180deg,rgba(121,223,255,.7) -10%,rgba(121,223,255,0) 70%),radial-gradient(circle at 95% 0,#5fcefa 0,rgba(95,213,182,0) 20%);
+    background-color: #cdd0fe;
 }
 .Login {
-    font-size: 1.5rem !important;
+    font-size: 1.2rem !important;
     border: none !important;
     transition: opacity 0.15 ease-in-out !important;
-    font-weight: 900 !important;
-    position: relative;
-    top: 1rem;
 }
 
 .sign {
-    position: relative;
-    top: 1rem;
-    right: 0.5%;
     border-radius: 0.9rem !important;
-    font-weight: 900 !important;
+    font-size: 1.2rem !important;
+    outline: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .Login:hover {
@@ -25,21 +20,50 @@
 }
 
 .logging {
-    margin-right: 2%;
     display: flex;
     justify-content: flex-end;
     font-family: 'Inter', sans-serif !important;
     font-weight: 900 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    z-index: 999;
+    background-color: #cdd0fe;
+    top: 0;
+}
+
+.logo {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.logName {
+    background: linear-gradient(120deg,#fdf263,#ddcf03);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .title {
     font-size: 4.5rem;
-    margin-top: 1%;
+    padding-top: 5%;
     text-align: center;
     width: 29%;
     position: relative;
     left: 36%;
     font-weight: 700;
+    color: #010432
+}
+
+.colorEffect {
+    background: linear-gradient(120deg,#fdf263,#ddcf03);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .searchbar {
@@ -51,11 +75,12 @@
 }
 
 .searching {
-    border: 2px solid black !important;
     border-radius: 0.9rem !important;
     box-shadow: none !important;
     font-size: 1.7rem !important;
     padding-inline-end: 10% !important;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(90deg, #afb4fe, #afb4fe);
+
 }
 
 .searching:active {
@@ -79,12 +104,11 @@
 
 .actualbutton {
     border-radius: 1% 15% 15% 1% !important;
+    background-color: #afb4fe !important;
 }
 
 .actualbutton:hover {
-    background-color: #0d6efd !important;
-    background-color: rgb(63 63 70/1) !important;
-    border-color: rgb(63 63 70/1) !important;
+    background-color: #fdf263 !important;
 }
 
 .desc {
@@ -94,21 +118,27 @@
 
 .bentoinfo {
     margin-top: 10rem;
-    margin-left: 10rem;
-    margin-right: 10rem;
+    width: 70%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 20px;
+    background-color: #cdd0fe;
+    color: #010432;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(90deg, #afb4fe, #afb4fe);
 }
 
 .box {
     font-size: 4rem;
-    color: #0d6efd;
+    color: #fdf263;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .fast {
     font-size: 2.5rem;
-    position: absolute !important;
-    color: white !important;
-    left: 4%;
-    top: 7%;
+    color: #010432 !important;
+    background-color: #fdf263;
+    border-radius: 20px;
 }
 
 .subtitle {
@@ -122,19 +152,17 @@
 }
 
 .lock {
-    font-size: 2.5rem;
-    position: absolute !important;
-    color: white !important;
-    left: 3.5%;
-    top: 7%;
+    font-size: 2rem;
+    color: #010432 !important;
+    background-color: #fdf263;
+    border-radius: 20px;
 }
 
 .infinity {
     font-size: 2.5rem;
-    position: absolute !important;
-    color: white !important;
-    left: 4.2%;
-    top: 8%;
+    color: #010432 !important;
+    background-color: #fdf263;
+    border-radius: 20px;
 }
 
 .banner {
@@ -169,17 +197,19 @@
 
 .ftitle {
     padding-top: 3rem;
-    color: black !important;
+    color: #010432 !important;
     font-family: 'Inter', sans-serif !important;
     font-weight: 800;
     font-size: 4rem;
-    margin-left: 15%;
+    padding-left: 15%;
+    background-color: #cdd0fe;
 }
 
 .faqsection {
-    margin-top: 4rem;
-    margin-left: 14.8%;
+    padding-top: 4rem;
     column-gap: 20%;
+    background-color: #cdd0fe;
+    color: #010432; 
 }
 
 .fbutton {
@@ -190,52 +220,53 @@
     width: 100%;
     text-align: left !important;
     background: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .f1, .f2, .f3, .f4 {
-    width: 30%;
     margin-bottom: 3%;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    color: #010432;
+    background-color: #afb4fe;
+    border-radius: 10px;
+    width: 50%;
+    padding: 15px !important;
 }
 
+.wow {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+svg {
+    vertical-align: baseline !important;
+}
 
 .plus {
-    margin-left: 52%;
+    position: relative; 
+    top: 3px;
+    color: #ddcf03;
 }
 
-.plus2 {
-    margin-left: 8%;
-}
-
-.plus3 {
-    margin-left: 23%;
-}
-
-.plus4 {
-    margin-left: 16%;
-}
-
-.line {
-    margin-top: 5%;
-    border-top: 3px solid grey;
-}
 
 .fdesc {
-    margin-left: 1%;
-    margin-top: 3%;
     font-family: 'Inter', sans-serif !important;
     font-weight: 500 !important;
     font-size: 1.5rem;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    color: #010432;
+    padding-left: 5px !important;
 }
 
 @media (max-width: 500px) {
     .title {
         font-size: 3rem;
-        margin-top: 10%;
+        padding-top: 10%;
         width: 70%;
         left: 13%;
     }
@@ -246,18 +277,6 @@
     .bentoinfo {
         margin-left: 1rem !important;
         margin-right: 0 !important;
-    }
-    .fast {
-        left: 8%;
-        top: 5%;
-    }
-    .lock {
-        left: 8%;
-        top: 5%;
-    }
-    .infinity {
-        left: 9%;
-        top: 5%;
     }
     .btitle {
         font-size: 3rem;
