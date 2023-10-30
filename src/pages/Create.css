@@ -1,13 +1,40 @@
-.vertical {
-    position: relative;
-    top: 30vh;
-    font-family: 'Inter', sans-serif !important;
-}
 
 .form-signin {
     max-width: 500px;
+    padding-top: 15%;
 }
 
 .ltitle {
     font-weight: 700 !important;
+}
+
+.signButton {
+    background-color: #aeb4fe !important;
+    color: #010432 !important;
+}
+
+.signEmail, .signPass {
+    border: none !important;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(90deg, #afb4fe, #afb4fe);
+}
+
+.form-check-input:checked {
+    background-color: #010432 !important;
+    border: none !important;
+}
+
+a {
+    color: #010432 !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+@media (max-width: 500px) {
+    .form-signin {
+        padding-top: 30% !important;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }

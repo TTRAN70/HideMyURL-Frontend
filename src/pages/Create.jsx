@@ -34,15 +34,35 @@ const Create = () => {
     }
   };
   return (
-    <div className="container vertical">
+    <div className="main">
+      <div className="logging">
+        <div onClick={() => navigate("/")} className="logo">
+          <span className="logName">URL</span>SPY
+        </div>
+        <button
+          onClick={() => navigate("/createaccount")}
+          type="button"
+          className="sign btn"
+        >
+          Sign Up
+        </button>
+        <button
+          onClick={() => navigate("/login")}
+          type="button"
+          className="Login btn"
+        >
+          Login
+        </button>
+      </div>
       <form onSubmit={(e) => createAccount(e)} className="form-signin m-auto">
-        <h1 className="ltitle">Create an Account</h1>
+        <h1 className="ltitle mb-2">Let's get Started!</h1>
+        <div className="mb-4">Please provide the following information:</div>
         <div className="mb-3">
           <input
             type="email"
-            className="form-control"
-            placeholder="Email Address"
-            aria-label="Email Address"
+            className="form-control signEmail"
+            placeholder="Email"
+            aria-label="Email"
             aria-describedby="basic-addon2"
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -50,14 +70,14 @@ const Create = () => {
         <div className="mb-1">
           <input
             type={hidePass ? "password" : "text"}
-            className="form-control"
+            className="form-control signPass"
             placeholder="Password"
             aria-label="Password"
             aria-describedby="basic-addon2"
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="form-check mb-2">
+        <div className="form-check mt-4 mb-2">
           <input
             className="form-check-input"
             type="checkbox"
@@ -69,7 +89,7 @@ const Create = () => {
             Show Password
           </label>
         </div>
-        <button className="w-100 btn btn-primary btn-large" type="submit">
+        <button className="w-100 btn btn-large signButton" type="submit">
           Sign Up
         </button>
         <div
@@ -85,7 +105,7 @@ const Create = () => {
             rel="noreferrer"
             onClick={() => navigate("/login")}
           >
-            Sign in instead?
+            Sign in instead? or use Google
           </a>
         </div>
       </form>
