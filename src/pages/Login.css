@@ -1,24 +1,12 @@
-.vertical {
-    position: relative;
-    top: 30vh;
-    font-family: 'Inter', sans-serif !important;
-}
+
 
 .form-signin {
     max-width: 500px;
-}
-.link {
-    position: relative;
-    bottom: 3vh;
 }
 
 .link-underline-primary {
     cursor: pointer !important;
     text-decoration: none;
-}
-
-.link-underline-primary:hover {
-    text-decoration: underline;
 }
 
 .google {
@@ -27,4 +15,31 @@
 
 .ltitle {
     font-weight: 700 !important;
+}
+
+
+.logButt:hover {
+    opacity: 70%;
+    transition: opacity ease 0.3s;
+}
+
+.googleLogo {
+    position: relative;
+}
+
+.moveGoogle {
+    position: absolute;
+    left: 7%;
+    top: 20%;
+}
+
+.emailLogo {
+    fill: white;
+    position: absolute;
+    left: 7%;
+    top: 34%;
+}
+
+.moveEmail {
+    position: relative;
 }
