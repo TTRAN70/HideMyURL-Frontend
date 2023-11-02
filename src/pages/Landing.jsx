@@ -2,7 +2,7 @@ import "./Landing.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import moment from "moment";
-import { IoIosCheckmarkCircle, IoIosAlert } from "react-icons/io";
+import { FiExternalLink } from "react-icons/fi";
 import { FaLock, FaInfinity, FaPlus, FaMinus } from "react-icons/fa";
 import { BsFillLightningChargeFill, BsArrowReturnLeft } from "react-icons/bs";
 const Landing = () => {
@@ -97,7 +97,7 @@ const Landing = () => {
     <div className="main">
       <div className="logging">
         <div onClick={() => navigate("/")} className="logo">
-          <span className="logName">URL</span>SPY
+          <span className="logName">URL</span>Hider
         </div>
         <button
           onClick={() => navigate("/createaccount")}
@@ -146,32 +146,34 @@ const Landing = () => {
         </div>
       </form>
       {error && (
-        <div
-          className="p-2 alert alert-danger d-flex align-items-center"
-          role="alert"
-        >
-          <div className="fontsizing">
-            <IoIosAlert className="spacing" />
-            {errorMessage}
+        <div className="success p-2 d-flex justify-content-center" role="alert">
+          <div className="d-flex justify-content-center errorC">
+            Something went wrong, please try again later or try a different URL
           </div>
         </div>
       )}
       {success && (
-        <div
-          className="p-2 alert alert-success d-flex align-items-center justify-content-center"
-          role="alert"
-        >
-          <div className="fontsizing">
-            <IoIosCheckmarkCircle className="spacing" />
-            Success! Your new link is:{" "}
+        <div className="success p-2 d-flex justify-content-center">
+          <div className="d-flex justify-content-center sucC">
             <a
-              className="link-underline-primary"
+              className="link-underline-white sucA"
               target="_blank"
               rel="noreferrer"
               href={`https://hidemyurl.vercel.app/${successMessage}`}
             >
               https://hidemyurl.vercel.app/{successMessage}
+              <FiExternalLink className="linked" />
             </a>
+            <span
+              onClick={() =>
+                navigator.clipboard.writeText(
+                  `https://hidemyurl.vercel.app/${successMessage}`
+                )
+              }
+              className="copy"
+            >
+              Copy
+            </span>
           </div>
         </div>
       )}

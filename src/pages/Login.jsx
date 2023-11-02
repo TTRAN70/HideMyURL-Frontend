@@ -50,7 +50,7 @@ const Login = () => {
     <div className="main">
       <div className="logging">
         <div onClick={() => navigate("/")} className="logo">
-          <span className="logName">URL</span>SPY
+          <span className="logName">URL</span>Hider
         </div>
         <button
           onClick={() => navigate("/createaccount")}
