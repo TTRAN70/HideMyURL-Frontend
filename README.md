@@ -26,7 +26,7 @@
 This Project Turns your original URL into a new, encoded URL like many URL shorteners out there, such as bit.ly
 
 This was a little fun side project I wanted to work on to learn express and backend just to have some awareness to it.
-DO NOT actually put sensitive links into the database, the database is literally wide open. This was JUST FOR FUN.
+DO NOT actually put sensitive links into the database. This was JUST FOR FUN.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
