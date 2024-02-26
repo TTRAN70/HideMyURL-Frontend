@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { UseAuthContext } from "../AuthContext";
 import { BsGoogle } from "react-icons/bs";
+import { CiLink } from "react-icons/ci";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,46 +12,49 @@ const Login = () => {
   const { signin, googleSignin, getUserID, getEmail } = UseAuthContext();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await signin(email, password);
-      navigate("/home");
-    } catch (err) {
-      setError(err.code);
-      console.clear();
-    }
-  };
-  const handleGoogle = async () => {
-    try {
-      await googleSignin();
-      const UID = await getUserID();
-      const newEmail = await getEmail();
-      const signupInfo = { uid: UID, email: newEmail };
-      const response = await fetch(
-        "https://hmu-backend.vercel.app/api/urlshort/googleuser",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          referrerPolicy: "no-referrer",
-          body: JSON.stringify(signupInfo),
+    if (e.target.id == "google") {
+      try {
+        await googleSignin();
+        const UID = await getUserID();
+        const newEmail = await getEmail();
+        const signupInfo = { uid: UID, email: newEmail };
+        const response = await fetch(
+          "https://hmu-backend.vercel.app/api/urlshort/googleuser",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            referrerPolicy: "no-referrer",
+            body: JSON.stringify(signupInfo),
+          }
+        );
+        const result = await response.json();
+        if (response.ok) {
+          console.log(result.success);
+          navigate("/home");
         }
-      );
-      const result = await response.json();
-      if (response.ok) {
-        console.log(result.success);
-        navigate("/home");
+      } catch (err) {
+        setError(err.code);
+        console.clear();
       }
-    } catch (err) {
-      setError(err.code);
-      console.clear();
+    } else {
+      try {
+        await signin(email, password);
+        navigate("/home");
+      } catch (err) {
+        setError(err.code);
+        console.clear();
+      }
     }
   };
   return (
     <div className="main">
       <div className="logging">
         <div onClick={() => navigate("/")} className="logo">
-          <span className="logName">URL</span>Hider
+          <CiLink className="newLogo" />
+          <span className="logName">URL</span>
+          <span className="plusplus">++</span>
         </div>
         <button
           onClick={() => navigate("/createaccount")}
@@ -68,7 +72,7 @@ const Login = () => {
         </button>
       </div>
       <form onSubmit={(e) => handleSubmit(e)} className="form-signin m-auto">
-        <h1 className="ltitle">Welcome Back!</h1>
+        <h1 className="ltitle">Welcome back!</h1>
         <div className="mb-4">All-In-One URL Tracking, just for you.</div>
         <div className="mb-3">
           <input
@@ -107,8 +111,8 @@ const Login = () => {
         </button>
         <button
           className="googleLogo w-100 btn btn-large signButton mt-3 logButt"
-          type="submit"
-          onClick={() => handleGoogle()}
+          id="google"
+          onClick={(e) => handleSubmit(e)}
         >
           <span>
             <svg

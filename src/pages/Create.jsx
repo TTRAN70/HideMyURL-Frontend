@@ -2,6 +2,7 @@ import "./Create.css";
 import { useState } from "react";
 import { UseAuthContext } from "../AuthContext";
 import { useNavigate } from "react-router-dom";
+import { CiLink } from "react-icons/ci";
 const Create = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,7 +38,9 @@ const Create = () => {
     <div className="main">
       <div className="logging">
         <div onClick={() => navigate("/")} className="logo">
-          <span className="logName">URL</span>Hider
+          <CiLink className="newLogo" />
+          <span className="logName">URL</span>
+          <span className="plusplus">++</span>
         </div>
         <button
           onClick={() => navigate("/createaccount")}
@@ -55,8 +58,8 @@ const Create = () => {
         </button>
       </div>
       <form onSubmit={(e) => createAccount(e)} className="form-signin m-auto">
-        <h1 className="ltitle mb-2">Let's get Started!</h1>
-        <div className="mb-4">Please provide the following information:</div>
+        <h1 className="ltitle mb-2">Let's get started!</h1>
+        <div className="mb-4">Ready to take your links to the next level?</div>
         <div className="mb-3">
           <input
             type="email"
@@ -117,7 +120,7 @@ const Create = () => {
             rel="noreferrer"
             onClick={() => navigate("/login")}
           >
-            Sign in instead? or use Google
+            Sign up with Google
           </a>
         </div>
       </form>

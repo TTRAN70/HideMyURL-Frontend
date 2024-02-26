@@ -1,7 +1,7 @@
 
 .form-signin {
     max-width: 500px;
-    padding-top: 15%;
+    padding-top: 10%;
 }
 
 .ltitle {
@@ -9,13 +9,14 @@
 }
 
 .signButton {
-    background-color: #010432 !important;
+    background-color: rgb(115, 204, 231) !important;
     color: white !important;
+    font-weight: bold !important;
 }
 
 .signEmail, .signPass {
     border: none !important;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(90deg, #afb4fe, #afb4fe);
+    background: #F3F4F6 !important;
 }
 
 .form-check-input:checked {

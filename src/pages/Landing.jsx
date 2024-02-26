@@ -3,8 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import moment from "moment";
 import { FiExternalLink } from "react-icons/fi";
-import { FaLock, FaInfinity, FaPlus, FaMinus } from "react-icons/fa";
-import { BsFillLightningChargeFill, BsArrowReturnLeft } from "react-icons/bs";
+import {
+  FaLock,
+  FaInfinity,
+  FaPlus,
+  FaMinus,
+  FaArrowRight,
+} from "react-icons/fa";
+import { BsFillLightningChargeFill } from "react-icons/bs";
+import { CiLink } from "react-icons/ci";
 const Landing = () => {
   const [link, setLink] = useState("");
   const [loading, setLoading] = useState(false);
@@ -15,6 +22,7 @@ const Landing = () => {
   const [minus1, setMinus1] = useState(false);
   const [minus2, setMinus2] = useState(false);
   const [minus3, setMinus3] = useState(false);
+
   const [minus4, setMinus4] = useState(false);
   const navigate = useNavigate();
 
@@ -97,7 +105,9 @@ const Landing = () => {
     <div className="main">
       <div className="logging">
         <div onClick={() => navigate("/")} className="logo">
-          <span className="logName">URL</span>Hider
+          <CiLink className="newLogo" />
+          <span className="logName">URL</span>
+          <span className="plusplus">++</span>
         </div>
         <button
           onClick={() => navigate("/createaccount")}
@@ -115,8 +125,12 @@ const Landing = () => {
         </button>
       </div>
       <h1 className="title">
-        Hide Your <span className="colorEffect">URL</span>
+        Discover the power of <span className="colorEffect">URL</span>{" "}
+        shortening.
       </h1>
+      <div className="subtext">
+        Enter your long URL to make it short and sweet.
+      </div>
       <form onSubmit={(e) => createURL(e)} className="form">
         <div className="searchbar input-group mb-3">
           <input
@@ -127,7 +141,7 @@ const Landing = () => {
             aria-label="Enter URL"
             aria-describedby="basic-addon2"
             onChange={(e) => setLink(e.target.value)}
-            placeholder="Paste or enter a URL here..."
+            placeholder="Paste or Ctrl-V"
           />
           <div className="submitting input-group-append">
             <button
@@ -137,22 +151,74 @@ const Landing = () => {
               type="submit"
             >
               {loading ? (
-                <div className="loader"></div>
+                <svg
+                  className="pl"
+                  width="80"
+                  height="80"
+                  viewBox="0 0 240 240"
+                >
+                  <circle
+                    className="pl__ring pl__ring--a"
+                    cx="120"
+                    cy="120"
+                    r="105"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="20"
+                    strokeDasharray="0 660"
+                    strokeDashoffset="-330"
+                    strokeLinecap="round"
+                  ></circle>
+                  <circle
+                    className="pl__ring pl__ring--b"
+                    cx="120"
+                    cy="120"
+                    r="35"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="20"
+                    strokeDasharray="0 220"
+                    strokeDashoffset="-110"
+                    strokeLinecap="round"
+                  ></circle>
+                  <circle
+                    className="pl__ring pl__ring--c"
+                    cx="85"
+                    cy="120"
+                    r="70"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="20"
+                    strokeDasharray="0 440"
+                    strokeDashoffset="round"
+                  ></circle>
+                  <circle
+                    className="pl__ring pl__ring--d"
+                    cx="155"
+                    cy="120"
+                    r="70"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="20"
+                    strokeDasharray="0 440"
+                    strokeDashoffset="round"
+                  ></circle>
+                </svg>
               ) : (
-                <BsArrowReturnLeft className="enter" />
+                <FaArrowRight className="enter" />
               )}
             </button>
           </div>
         </div>
       </form>
       {error && (
-        <div className="success p-2 d-flex justify-content-center" role="alert">
+        <div className="success p-2 d-flex justify-content-center">
           <div className="d-flex justify-content-center errorC">
-            Something went wrong, please try again later or try a different URL
+            Something went wrong, please refresh and try again.
           </div>
         </div>
       )}
-      {success && (
+      {success ? (
         <div className="success p-2 d-flex justify-content-center">
           <div className="d-flex justify-content-center sucC">
             <a
@@ -176,35 +242,51 @@ const Landing = () => {
             </span>
           </div>
         </div>
+      ) : (
+        <div className="invisible success p-2 d-flex justify-content-center">
+          <div className="d-flex justify-content-center sucC">
+            <a
+              className="link-underline-white sucA"
+              target="_blank"
+              rel="noreferrer"
+              href={`https://hidemyurl.vercel.app/${successMessage}`}
+            >
+              https://hidemyurl.vercel.app/{successMessage}
+              <FiExternalLink className="linked" />
+            </a>
+          </div>
+        </div>
       )}
-      <div className="text-center mt-5 desc">Want more features? Sign up!</div>
+      <div className="text-center mt-5 desc">
+        Want more features?{" "}
+        <a href="/createaccount" className="anchor">
+          Sign up!
+        </a>
+      </div>
       <div className="bfix d-flex justify-content-center">
         <div className="bentoinfo d-flex justify-content-evenly p-4">
           <div className="item1 position-relative">
             <BsFillLightningChargeFill className="fast p-2" />
-            <div className="fs-3 subtitle">Faster than ever.</div>
-            <div className="subdesc">
-              Using the latest technology, getting a newer URL{" "}
+            <div className="fs-3 subtitle">Get links quickly</div>
+            <div className="subdesc sub1">
+              Experience blazing-fast response times to upscale your business.
             </div>
-            <div className="subdesc">is now 30% faster.</div>
           </div>
           <div className="item2 position-relative">
             <FaLock className="lock p-2" />
-            <div className="fs-3 subtitle">Enable Passwords.</div>
-            <div className="subdesc">
-              Simply login or signup to add a password to your URL{" "}
-            </div>
-            <div className="subdesc">
-              to prevent malicious people from entering your website.
+            <div className="fs-3 subtitle">Password protection</div>
+            <div className="subdesc sub2">
+              Keep your links secure. Add a password to your short links to
+              ensure that only the people you want to access them can.
             </div>
           </div>
           <div className="item3 position-relative">
             <FaInfinity className="infinity p-2" />
-            <div className="fs-3 subtitle">Completely Free.</div>
-            <div className="subdesc">
-              Free and Unlimited. Paste as many links as you{" "}
+            <div className="fs-3 subtitle sublink">Link analytics</div>
+            <div className="subdesc sub3">
+              Get insights into your audience. See where your clicks are coming
+              from and which links are performing best.{" "}
             </div>
-            <div className="subdesc">need, or want.</div>
           </div>
         </div>
       </div>

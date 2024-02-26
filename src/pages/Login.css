@@ -9,6 +9,10 @@
     text-decoration: none;
 }
 
+.link-underline-primary:hover {
+    text-decoration: underline !important;
+}
+
 .google {
     bottom: 5%;
 }

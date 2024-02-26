@@ -7,19 +7,31 @@ import Saved from "./pages/Saved";
 import Landing from "./pages/Landing";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthContextProvider } from "./AuthContext";
+
+const AppRoutes = () => {
+  const routes = [
+    { path: "/", element: <Landing /> },
+    { path: "/login", element: <Login /> },
+    { path: "/createaccount", element: <Create /> },
+    { path: "/home", element: <Home /> },
+    { path: "/:id", element: <Redirect /> },
+    { path: "/saved/:userID", element: <Saved /> },
+  ];
+  return (
+    <Routes>
+      {routes.map(({ path, element }, index) => (
+        <Route key={index} path={path} element={element} />
+      ))}
+    </Routes>
+  );
+};
+
 function App() {
   return (
     <div className="app">
       <Router>
         <AuthContextProvider>
-          <Routes>
-            <Route exact path="/" element={<Landing />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/createaccount" element={<Create />} />
-            <Route exact path="/home" element={<Home />} />
-            <Route exact path="/:id" element={<Redirect />} />
-            <Route exact path="/saved/:userID" element={<Saved />} />
-          </Routes>
+          <AppRoutes />
         </AuthContextProvider>
       </Router>
     </div>
