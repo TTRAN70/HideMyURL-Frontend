@@ -1,66 +1,29 @@
+.homebody {
+  background-color: rgb(243 244 246);
+  height: 100%;
+}
 .vertical {
     position: relative;
-    top: 40vh;
 }
 
-.hmain {
-  width: 50% !important;
+.htitle {
+  width: 60% !important;
+  text-align: left !important;
+  left: 20% !important;
+  margin-top: 3%;
 }
 
-.fontsizing {
-    font-size: 1.3rem;
-}
-
-.spacing {
-    margin-right: 10px;
-    margin-left: 10px;
-    position: relative;
-    top: -2px;
+.hsubtext {
+  text-align: left !important;
+  margin-left: 20%;
 }
 
 .hsearchbar {
-  width: 100% !important;
-  position: relative;
-  left: 0;
-  margin-top: 5%;
-  height: 4rem !important;
-}
-
-.hsearching {
-  border: 2px solid black !important;
-  border-radius: 0.9rem !important;
-  box-shadow: none !important;
-  font-size: 1.7rem !important;
-  padding-inline-end: 10% !important;
-}
-
-.hsearching:active {
-  box-shadow: none !important;
-}
-
-.hsearching:focus {
-  z-index: 0 !important;
-}
-
-.henter {
-  position: relative;
-  font-size: 2rem;
-  height: 3.1rem !important;
-}
-
-.hsubmitting {
-  position: relative;
-  right: 5%;
-}
-
-.hactualbutton {
-  border-radius: 1% 15% 15% 1% !important;
-}
-
-.hactualbutton:hover {
-  background-color: #0d6efd !important;
-  background-color: rgb(63 63 70/1) !important;
-  border-color: rgb(63 63 70/1) !important;
+  width: 60% !important;
+    position: relative;
+    left: 20%;
+    margin-top: 3%;
+    height: 3rem !important;
 }
 
 .loader {
@@ -89,15 +52,107 @@
     pointer-events: none !important;
   }
 
-  .alert-success, .alert-danger {
-    margin-top: 3%;
+  @media (max-width: 500px) {
+    .htitle {
+      width: 80% !important;
+      left: 9% !important;
+    }
+    .hsubtext {
+      text-align: center !important;
+      margin-left: 0;
+      font-size: 1rem !important;
+    }
+    .hsearchbar {
+      width: 85% !important;
+      left: 10% !important;
+    }
+    .label {
+      margin-left: 10% !important;
+    }
+    .theme-checkbox {
+      left: 10% !important;
+    }
+    .input {
+      margin-left: 10% !important;
+    }
   }
 
-  @media (max-width: 500px) {
-    .hmain {
-      width: 90% !important;
-    }
-    .henter {
-      height: 3.2rem !important;
-    }
-  }
+  .theme-checkbox {
+  --toggle-size: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 6.25em;
+  height: 3.125em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+  background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 99em;
+  position: relative;
+  left: 20%;
+  cursor: pointer;
+  font-size: var(--toggle-size);
+}
+
+.theme-checkbox::before {
+  content: "";
+  width: 2.25em;
+  height: 2.25em;
+  position: absolute;
+  top: 0.438em;
+  left: 0.438em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+  background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 100%;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.theme-checkbox:checked::before {
+  left: calc(100% - 2.25em - 0.438em);
+  background-position: 0;
+}
+
+.theme-checkbox:checked {
+  background-position: 100%;
+}
+
+.input {
+  max-width: 190px;
+  height: 44px;
+  background-color: #05060f0a;
+  border-radius: .5rem !important;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+  margin-left: 20%;
+}
+
+.label {
+  display: block;
+  margin-bottom: .3rem;
+  font-size: .9rem;
+  font-weight: bold;
+  color: #05060f99;
+  transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+  margin-left: 20%;
+}
+
+.input:hover, .input:focus, .input-group:hover .input {
+  outline: none;
+  border-color: #05060f;
+}
+
+.input-group:hover .label, .input:focus {
+  color: #05060fc2;
+}

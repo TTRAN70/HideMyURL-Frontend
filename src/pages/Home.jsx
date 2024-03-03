@@ -1,8 +1,8 @@
 import "./Home.css";
 import { useEffect, useState } from "react";
 import { UseAuthContext } from "../AuthContext";
-import { RxEnter } from "react-icons/rx";
-import { IoIosCheckmarkCircle, IoIosAlert } from "react-icons/io";
+import { FiExternalLink } from "react-icons/fi";
+import { FaArrowRight } from "react-icons/fa";
 import moment from "moment";
 import Navbar from "../navigation/Navbar";
 const Home = () => {
@@ -80,92 +80,159 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="homebody">
       <Navbar />
       <div className="container vertical hmain">
-        <h1>Welcome, feel free to explore.</h1>
+        <h1 className="title htitle">
+          Dashboard analytics <span className="colorEffect">coming soon!</span>{" "}
+        </h1>
+        <div className="subtext hsubtext">
+          You can view your saved URL in the top right
+        </div>
         <form onSubmit={(e) => createURL(e)} className="form">
-          <div className="hsearchbar input-group mb-3">
+          <div className="hsearchbar input-group">
             <input
               required
               value={link}
               type="url"
-              className="hsearching form-control"
+              className="searching form-control"
               aria-label="Enter URL"
               aria-describedby="basic-addon2"
               onChange={(e) => setLink(e.target.value)}
+              placeholder="Paste or Ctrl-V"
             />
-            <div className="hsubmitting input-group-append">
+            <div className="submitting input-group-append">
               <button
                 className={
-                  loading
-                    ? "hactualbutton btn btn-primary loading"
-                    : "hactualbutton btn btn-primary"
+                  loading ? "actualbutton btn loading" : "actualbutton btn"
                 }
                 type="submit"
               >
                 {loading ? (
-                  <div className="loader"></div>
+                  <svg
+                    className="pl"
+                    width="80"
+                    height="80"
+                    viewBox="0 0 240 240"
+                  >
+                    <circle
+                      className="pl__ring pl__ring--a"
+                      cx="120"
+                      cy="120"
+                      r="105"
+                      fill="none"
+                      stroke="#000"
+                      strokeWidth="20"
+                      strokeDasharray="0 660"
+                      strokeDashoffset="-330"
+                      strokeLinecap="round"
+                    ></circle>
+                    <circle
+                      className="pl__ring pl__ring--b"
+                      cx="120"
+                      cy="120"
+                      r="35"
+                      fill="none"
+                      stroke="#000"
+                      strokeWidth="20"
+                      strokeDasharray="0 220"
+                      strokeDashoffset="-110"
+                      strokeLinecap="round"
+                    ></circle>
+                    <circle
+                      className="pl__ring pl__ring--c"
+                      cx="85"
+                      cy="120"
+                      r="70"
+                      fill="none"
+                      stroke="#000"
+                      strokeWidth="20"
+                      strokeDasharray="0 440"
+                      strokeDashoffset="round"
+                    ></circle>
+                    <circle
+                      className="pl__ring pl__ring--d"
+                      cx="155"
+                      cy="120"
+                      r="70"
+                      fill="none"
+                      stroke="#000"
+                      strokeWidth="20"
+                      strokeDasharray="0 440"
+                      strokeDashoffset="round"
+                    ></circle>
+                  </svg>
                 ) : (
-                  <RxEnter className="henter" />
+                  <FaArrowRight className="enter" />
                 )}
               </button>
             </div>
           </div>
         </form>
-        <div className="form-check form-switch">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckDefault"
-            onChange={() => handleSwitch()}
-          />
-          <span>{linkPrivacy ? "Private" : "Public"}</span>
-        </div>
-        {linkPrivacy && (
-          <div className="input-group input-group-sm mt-3">
-            <span className="input-group-text" id="inputGroup-sizing-sm">
-              Password
-            </span>
-            <input
-              type="password"
-              className="form-control"
-              aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-sm"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-          </div>
-        )}
         {error && (
-          <div
-            className="p-2 alert alert-danger d-flex align-items-center"
-            role="alert"
-          >
-            <div className="fontsizing">
-              <IoIosAlert className="spacing" />
-              {errorMessage}
+          <div className="success p-2 d-flex justify-content-center">
+            <div className="d-flex justify-content-center errorC">
+              Something went wrong, please refresh and try again.
             </div>
           </div>
         )}
-        {success && (
-          <div
-            className="p-2 alert alert-success d-flex align-items-center"
-            role="alert"
-          >
-            <div className="fontsizing">
-              <IoIosCheckmarkCircle className="spacing" />
-              Success! Your new link is:{" "}
+        {success ? (
+          <div className="success p-2 d-flex justify-content-center">
+            <div className="d-flex justify-content-center sucC">
               <a
-                className="link-underline-primary"
+                className="link-underline-white sucA"
                 target="_blank"
                 rel="noreferrer"
                 href={`https://hidemyurl.vercel.app/${successMessage}`}
               >
                 https://hidemyurl.vercel.app/{successMessage}
+                <FiExternalLink className="linked" />
+              </a>
+              <span
+                onClick={() =>
+                  navigator.clipboard.writeText(
+                    `https://hidemyurl.vercel.app/${successMessage}`
+                  )
+                }
+                className="copy"
+              >
+                Copy
+              </span>
+            </div>
+          </div>
+        ) : (
+          <div className="invisible success p-2 d-flex justify-content-center">
+            <div className="d-flex justify-content-center sucC">
+              <a
+                className="link-underline-white sucA"
+                target="_blank"
+                rel="noreferrer"
+                href={`https://hidemyurl.vercel.app/${successMessage}`}
+              >
+                https://hidemyurl.vercel.app/{successMessage}
+                <FiExternalLink className="linked" />
               </a>
             </div>
+          </div>
+        )}
+        <label className="label">Add a password</label>
+        <input
+          type="checkbox"
+          onChange={() => handleSwitch()}
+          className="theme-checkbox"
+        ></input>
+        {linkPrivacy && (
+          <div className="input-group">
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="off"
+              name="Password"
+              id="Password"
+              className="input"
+              type="password"
+            />
+            <div></div>
           </div>
         )}
       </div>

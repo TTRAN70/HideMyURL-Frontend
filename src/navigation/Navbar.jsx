@@ -19,26 +19,26 @@ const Navbar = () => {
     }
   };
   return (
-    <div className="text-bg-light shadow-sm position-relative navvy">
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <div className="position-relative navvy">
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item rounded-3 cre">
-              <Link className="nav-link" to="/home">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 linking">
+            <li className="nav-item cre">
+              <Link className="nav-link create" to="/home">
                 Create
               </Link>
             </li>
             <li className="nav-item rounded-3">
-              <Link className="nav-link" to={`/saved/${UID}`}>
-                Saved URLS
+              <Link className="nav-link saved" to={`/saved/${UID}`}>
+                My URLS
               </Link>
             </li>
           </ul>
           <div className="position-relative username translate-middle-y">
             <div className="dd">
+              <span className={drop ? "darrow down" : "darrow up"}></span>
               <button onClick={() => handleDrop()} className="ddbutton">
                 {username}
-                <span className={drop ? "darrow up" : "darrow down"}></span>
               </button>
               <div className={drop ? "ddmenu" : "hide"}>
                 <a onClick={() => handleSignout()} className="ddselect">
