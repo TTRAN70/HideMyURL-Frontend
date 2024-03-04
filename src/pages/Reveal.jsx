@@ -1,17 +1,14 @@
 import { useState } from "react";
+import "./Reveal.css";
 const Reveal = (props) => {
   const [show, setShow] = useState(false);
   return !show ? (
-    <em>
-      <a
-        className="font-weight-normal text-secondary"
-        onClick={() => setShow(true)}
-      >
-        Reveal
-      </a>
-    </em>
+    <button onClick={() => setShow(true)} className="revealButton">
+      {" "}
+      <span className="revealSpan">Reveal</span>
+    </button>
   ) : (
-    <em>{props.password}</em>
+    <div className="BOB">{props.password}</div>
   );
 };
 

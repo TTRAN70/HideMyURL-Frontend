@@ -4,6 +4,7 @@
 }
 .vertical {
     position: relative;
+    background-color: rgb(243 244 246);
 }
 
 .htitle {
@@ -24,6 +25,10 @@
     left: 20%;
     margin-top: 3%;
     height: 3rem !important;
+}
+
+.hsuccess {
+  top: 50px !important;
 }
 
 .loader {
@@ -68,12 +73,25 @@
     }
     .label {
       margin-left: 10% !important;
+      margin-top: 10% !important;
     }
     .theme-checkbox {
       left: 10% !important;
     }
     .input {
       margin-left: 10% !important;
+    }
+    .hsuccess {
+      top: 30px !important;
+    }
+  }
+
+  @media (max-width: 1200px) and (min-width: 550px) {
+    .hsuccess {
+      top: 30px !important;
+    }
+    .label {
+      margin-top: 5% !important;
     }
   }
 

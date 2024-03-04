@@ -110,3 +110,9 @@
         flex-direction: row !important;
     }
 }
+
+@media (max-width: 399px) {
+    .ddbutton {
+        font-size: 0.7rem;
+    }
+}

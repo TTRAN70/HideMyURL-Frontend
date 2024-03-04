@@ -177,7 +177,7 @@ const Home = () => {
           </div>
         )}
         {success ? (
-          <div className="success p-2 d-flex justify-content-center">
+          <div className="success hsuccess p-2 d-flex justify-content-center">
             <div className="d-flex justify-content-center sucC">
               <a
                 className="link-underline-white sucA"
@@ -201,7 +201,7 @@ const Home = () => {
             </div>
           </div>
         ) : (
-          <div className="invisible success p-2 d-flex justify-content-center">
+          <div className="invisible hsuccess success p-2 d-flex justify-content-center">
             <div className="d-flex justify-content-center sucC">
               <a
                 className="link-underline-white sucA"
