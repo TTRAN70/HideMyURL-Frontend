@@ -19,7 +19,7 @@ const Login = () => {
         const newEmail = await getEmail();
         const signupInfo = { uid: UID, email: newEmail };
         const response = await fetch(
-          "https://hmu-backend.vercel.app/api/urlshort/googleuser",
+          "https://hmu-backend.vercel.app/api/profile/googleuser",
           {
             method: "POST",
             headers: {

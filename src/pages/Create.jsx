@@ -17,7 +17,7 @@ const Create = () => {
       const UID = await getUserID();
       const signupInfo = { user: { userId: UID, email: email } };
       const response = await fetch(
-        "https://hmu-backend.vercel.app/api/urlshort/makeuser",
+        "https://hmu-backend.vercel.app/api/profile/makeuser",
         {
           method: "POST",
           headers: {
