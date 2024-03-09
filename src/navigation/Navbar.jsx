@@ -36,7 +36,6 @@ const Navbar = () => {
           </ul>
           <div className="position-relative username translate-middle-y">
             <div className="dd">
-              <span className={drop ? "darrow down" : "darrow up"}></span>
               <button onClick={() => handleDrop()} className="ddbutton">
                 {username}
               </button>
