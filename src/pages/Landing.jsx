@@ -225,7 +225,7 @@ const Landing = () => {
               className="link-underline-white sucA"
               target="_blank"
               rel="noreferrer"
-              href={`https://hidemyurl.vercel.app/${successMessage}`}
+              href={`https://urlpp.vercel.app/${successMessage}`}
             >
               https://hidemyurl.vercel.app/{successMessage}
               <FiExternalLink className="linked" />
@@ -233,7 +233,7 @@ const Landing = () => {
             <span
               onClick={() =>
                 navigator.clipboard.writeText(
-                  `https://hidemyurl.vercel.app/${successMessage}`
+                  `https://urlpp.vercel.app/${successMessage}`
                 )
               }
               className="copy"
@@ -249,9 +249,9 @@ const Landing = () => {
               className="link-underline-white sucA"
               target="_blank"
               rel="noreferrer"
-              href={`https://hidemyurl.vercel.app/${successMessage}`}
+              href={`https://urlpp.vercel.app/${successMessage}`}
             >
-              https://hidemyurl.vercel.app/{successMessage}
+              https://urlpp.vercel.app/{successMessage}
               <FiExternalLink className="linked" />
             </a>
           </div>
