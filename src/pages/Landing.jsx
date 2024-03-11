@@ -227,7 +227,7 @@ const Landing = () => {
               rel="noreferrer"
               href={`https://urlpp.vercel.app/${successMessage}`}
             >
-              https://hidemyurl.vercel.app/{successMessage}
+              https://urlpp.vercel.app/{successMessage}
               <FiExternalLink className="linked" />
             </a>
             <span
