@@ -21,7 +21,7 @@
 
 ## About The Project
 
-<a href="https://hidemyurl.vercel.app/">HideMyURL Link</a>
+<a href="https://urlpp.vercel.app/">URL++ Link</a>
 
 This Project Turns your original URL into a new, encoded URL like many URL shorteners out there, such as bit.ly
 
@@ -45,7 +45,7 @@ Paste your URL into the input, click the blue send button and get a new URL.
 
 LinkedIn - [Tony Tran](https://www.linkedin.com/in/tony-tran-468215241/)
 
-Project Link: [https://github.com/TTRAN70/HideMyURL-Frontend](https://github.com/TTRAN70/HideMyURL-Frontend)
+Project Link: [https://github.com/TTRAN70/Short-URL-Frontend](https://github.com/TTRAN70/Short-URL-Frontend)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
