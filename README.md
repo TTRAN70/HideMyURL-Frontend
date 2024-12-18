@@ -1,4 +1,4 @@
-# Welcome to my HideMe!
+# Welcome to my HideMe! (App is No Longer Being Ran)
 
 <a name="readme-top"></a>
 
